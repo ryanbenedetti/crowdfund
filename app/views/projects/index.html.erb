@@ -1,0 +1,35 @@
+<h1>Projects</h1>
+
+<!-- Generate the list dynamically -->
+
+<% @projects.each do |project| %>
+  <ul>
+    <li><strong><%= project.name %></strong>:
+	<%= project.description %>:
+	<%= number_to_currency(project.target_pledge_amount) %>
+	</li>
+  </ul>
+<% end %>
+
+<!--
+
+<ul>
+	<li>Beer-bot</li>
+	<li>Ants versus Mambas Game</li>
+	<li>Conference Kayak</li>
+</ul>
+-->
+
+<!-- Generate the list dynamically 
+
+<% @projects.each do |project| %>
+  <ul>
+    <li><%= project %></li>
+  </ul>
+<% end %>
+-->
+
+<!-- Print instance name for array of projects 
+<%= @projects %>
+-->
+
