@@ -1,7 +1,31 @@
 <h1>Projects</h1>
 
-<!-- Generate the list dynamically -->
+ <% @projects.each do |project| %>
+  <article> 
+	<header>
+	  <h2><%= project.name %></h2>
+	</header>
+	   
+	<p>
+			<%= project.description %>
+	</p>
+	<table>
+	 	<tr>
+			<th>Funding Goal:</th>
+				<td><%= number_to_currency(project.target_pledge_amount) %></td>	
+			<th>Pledging Ends:</th>
+				<td><%= project.pledging_ends_on %></td>
+			<th>Website:</th>
+				<td><%= project.website %></td>
+		 </tr>
+  	  </table>
+	</article>
 
+ <% end %>
+
+<!--
+  
+  Generate the list dynamically
 <% @projects.each do |project| %>
   <ul>
     <li><strong><%= project.name %></strong>:
@@ -10,8 +34,6 @@
 	</li>
   </ul>
 <% end %>
-
-<!--
 
 <ul>
 	<li>Beer-bot</li>
